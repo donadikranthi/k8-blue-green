@@ -1,11 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   name: nginx
-  # these are replica set labels
 spec:
   selector:
-  purpose: blue-green
+    purpose: blue-green
     project: roboshop
     color: blue
   ports:
