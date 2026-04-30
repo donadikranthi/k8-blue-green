@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # these are replica set labels
+spec:
+  selector:
+  purpose: blue-green
+    project: roboshop
+    color: blue
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
